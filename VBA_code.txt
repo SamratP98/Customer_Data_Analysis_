@@ -1,0 +1,518 @@
+'Information_Tab
+Sub Display_Info_Box()
+    With ActiveSheet
+    .Shapes("Inactive").Visible = False
+    .Shapes("Active").Visible = True
+    .Shapes("Info_Box").Visible = True
+    End With
+
+End Sub
+
+Sub Hide_Info_Box()
+    With ActiveSheet
+    .Shapes("Inactive").Visible = True
+    .Shapes("Active").Visible = False
+    .Shapes("Info_Box").Visible = False
+    End With
+
+
+End Sub
+'Revenue_Unit_Tab
+Sub Display_Tab_Sales_Revenue()
+    With ActiveSheet
+    'Visibility_Of_Tab_Buttons
+    .Shapes("RI").Visible = False
+    .Shapes("RA").Visible = True
+    .Shapes("UI").Visible = True
+    .Shapes("UA").Visible = False
+    
+    'Visibility_Of_Tab_Contents
+    .Shapes("MR").Visible = True
+    .Shapes("LR").Visible = True
+    .Shapes("MU").Visible = False
+    .Shapes("LU").Visible = False
+    End With
+End Sub
+
+Sub Display_Tab_Sales_Unit()
+    With ActiveSheet
+    'Visibility_Of_Tab_Buttons
+    .Shapes("RI").Visible = True
+    .Shapes("RA").Visible = False
+    .Shapes("UI").Visible = False
+    .Shapes("UA").Visible = True
+    
+    'Visibility_Of_Tab_Contents
+    .Shapes("MR").Visible = False
+    .Shapes("LR").Visible = False
+    .Shapes("MU").Visible = True
+    .Shapes("LU").Visible = True
+    End With
+End Sub
+
+Sub Display_Settings_Menu_()
+    With ActiveSheet
+      'Visibility Setting Button
+      .Shapes("SU").Visible = False
+      .Shapes("SF").Visible = True
+      
+      'Visibility Setting Menu
+      .Shapes("SM").Visible = True
+      .Shapes("T").Visible = True
+      .Shapes("TT").Visible = True
+      .Shapes("TTT").Visible = True
+      .Shapes("TTTT").Visible = True
+      End With
+      End Sub
+
+Sub Hide_Settings_Menu_()
+    With ActiveSheet
+      'Visibility Setting Button
+      .Shapes("SU").Visible = True
+      .Shapes("SF").Visible = False
+     
+      'Visibility Setting Menu
+      .Shapes("SM").Visible = False
+      .Shapes("T").Visible = False
+      .Shapes("TT").Visible = False
+      .Shapes("TTT").Visible = False
+      .Shapes("TTTT").Visible = False
+      
+    
+      End With
+      
+End Sub
+
+'Color Theme Buttons
+
+ 
+
+Function Change_Radio_Button_Status(Radio_Button As Object, Active As Boolean)
+
+ 
+
+    With Radio_Button
+
+ 
+
+        If Active = True Then
+
+            .TextFrame.Characters.Font.Color = RGB(255, 255, 255)
+
+            .Fill.Transparency = 0#
+
+        Else
+
+            .TextFrame.Characters.Font.Color = RGB(0, 0, 0)
+
+            .Fill.Transparency = 1#
+
+        End If
+
+ 
+
+    End With
+
+ 
+
+End Function
+
+ 
+
+
+ 
+
+Sub Display_Theme_1()
+
+ 
+
+    With ActiveSheet
+
+ 
+
+        'Dashboard Themes Visibility
+
+        .Shapes("DT").Visible = True
+
+        .Shapes("DTT").Visible = False
+
+        .Shapes("DTTT").Visible = False
+
+        .Shapes("DTTTT").Visible = False
+
+ 
+
+        'Color Theme Buttons Status
+
+        Call Change_Radio_Button_Status(.Shapes("T"), True)
+
+        Call Change_Radio_Button_Status(.Shapes("TT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTTT"), False)
+
+   
+
+    End With
+
+ 
+
+End Sub
+
+ 
+
+
+
+ 
+
+Sub Display_Theme_2()
+
+ 
+
+    With ActiveSheet
+
+ 
+
+        'Dashboard Themes Visibility
+
+        .Shapes("DT").Visible = False
+
+        .Shapes("DTT").Visible = True
+
+        .Shapes("DTTT").Visible = False
+
+        .Shapes("DTTTT").Visible = False
+
+ 
+        'Color Theme Buttons Status
+
+        Call Change_Radio_Button_Status(.Shapes("T"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TT"), True)
+
+        Call Change_Radio_Button_Status(.Shapes("TTT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTTT"), False)
+
+   
+
+    End With
+
+ 
+
+End Sub
+
+ 
+
+
+
+ 
+
+Sub Display_Theme_3()
+
+ 
+
+    With ActiveSheet
+
+ 
+
+        'Dashboard Themes Visibility
+
+        .Shapes("DT").Visible = False
+
+        .Shapes("DTT").Visible = False
+
+        .Shapes("DTTT").Visible = True
+
+        .Shapes("DTTTT").Visible = False
+
+ 
+
+        'Color Theme Buttons Status
+
+        Call Change_Radio_Button_Status(.Shapes("T"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTT"), True)
+
+        Call Change_Radio_Button_Status(.Shapes("TTTT"), False)
+
+ 
+
+    End With
+
+ 
+
+End Sub
+
+ 
+
+
+ 
+
+Sub Display_Theme_4()
+
+ 
+
+    With ActiveSheet
+
+ 
+
+        'Dashboard Themes Visibility
+
+        .Shapes("DT").Visible = False
+
+        .Shapes("DTT").Visible = False
+
+        .Shapes("DTT").Visible = False
+
+        .Shapes("DTTTT").Visible = True
+
+ 
+
+        'Color Theme Buttons Status
+
+        Call Change_Radio_Button_Status(.Shapes("T"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTT"), False)
+
+        Call Change_Radio_Button_Status(.Shapes("TTTT"), True)
+
+   
+
+    End With
+
+ 
+
+End Sub
+
+
+
+'Toggle Buttons
+
+ 
+
+Function Change_Toggle_Button_Status(Toggle_Circle As Object, Toggle_Background As Object, Toggle_Textbox As Object, Active As Boolean)
+
+ 
+
+    If Active = True Then
+
+ 
+
+        With Toggle_Circle
+
+            .Fill.ForeColor.RGB = RGB(0, 135, 65) 'dark green
+
+            .Left = Toggle_Circle.Left + 17 'move Toggle_Circle 17 pt to the right
+
+        End With
+
+ 
+
+        Toggle_Background.Fill.ForeColor.RGB = RGB(50, 180, 50) 'light green
+
+        Toggle_Textbox.TextFrame.Characters.Text = "On"
+
+ 
+
+    Else
+
+ 
+
+        With Toggle_Circle
+
+            .Fill.ForeColor.RGB = RGB(255, 255, 255) 'white
+
+            .Left = Toggle_Circle.Left - 17 'move Toggle_Circle 17 pt to the left
+
+        End With
+
+ 
+
+        Toggle_Background.Fill.ForeColor.RGB = RGB(169, 169, 160) 'light grey
+
+        Toggle_Textbox.TextFrame.Characters.Text = "Off"
+
+ 
+
+    End If
+
+ 
+
+End Function
+
+Sub Change_Info_Visibility()
+
+ 
+
+    With ActiveSheet
+
+       
+
+        If .Shapes("ROFF").Fill.ForeColor.RGB = RGB(255, 255, 255) Then
+
+ 
+
+            'Visibility Info Elements
+
+            With .Shapes("Inactive")
+
+                .Visible = True
+
+
+            End With
+
+ 
+
+            .Shapes("Info_Box").Visible = False
+
+ 
+
+            'Toggle Button Status
+
+            Call Change_Toggle_Button_Status(.Shapes("ROFF"), .Shapes("BSF"), .Shapes("OFF"), True)
+ 
+
+        Else
+
+           
+
+            'Visibility Info Elements
+
+        .Shapes("Active").Visible = False
+
+            .Shapes("Active").Visible = False
+            
+             .Shapes("Inactive").Visible = False
+
+            .Shapes("Inactive").Visible = False
+            
+            .Shapes("Info_Box").Visible = False
+
+ 
+
+            'Toggle Button Status
+
+            Call Change_Toggle_Button_Status(.Shapes("ROFF"), .Shapes("BSF"), .Shapes("OFF"), False)
+       
+
+        End If
+
+ 
+
+    End With
+
+ 
+
+End Sub
+
+Sub Change_Tabs_Visibility()
+
+ 
+
+    'Rules
+
+    'Visibility Off –> Reset/ Display Sales Revenue Charts
+
+    'Visibility On –> Display Sales Revenue Charts by default
+
+ 
+
+    With ActiveSheet
+
+ 
+
+        If .Shapes("RON").Fill.ForeColor.RGB = RGB(255, 255, 255) Then
+
+ 
+
+            'Visibility of Tab Buttons
+
+            .Shapes("RA").Visible = True
+
+            .Shapes("UA").Visible = True
+
+ 
+
+            With .Shapes("RA").TextFrame.Characters.Font.Color = RGB(0, 0, 0) 'black.Fill.Transparency = 0#
+
+            End With
+
+ 
+
+            With .Shapes("UA")
+
+                .TextFrame.Characters.Font.Color = RGB(255, 255, 255) 'white
+
+                .Fill.Transparency = 1#
+
+            End With
+
+ 
+
+            'Visibility of Tab Content
+
+            .Shapes("MR").Visible = True
+
+            .Shapes("LR").Visible = True
+
+            .Shapes("MU").Visible = False
+
+            .Shapes("LU").Visible = False
+
+ 
+
+            'Toggle Button Status
+
+            Call Change_Toggle_Button_Status(.Shapes("RON"), .Shapes("BSO"), .Shapes("ON"), True)
+
+        Else
+
+ 
+
+            'Visibility Tab Buttons
+
+            .Shapes("RA").Visible = False
+            .Shapes("RI").Visible = False
+
+            .Shapes("UA").Visible = False
+            .Shapes("UI").Visible = False
+
+ 
+
+            'Visibility of Tab Content
+
+            .Shapes("MR").Visible = True
+
+            .Shapes("LR").Visible = True
+
+            .Shapes("MU").Visible = False
+
+            .Shapes("LU").Visible = False
+
+ 
+
+            'Toggle Button Status
+
+            Call Change_Toggle_Button_Status(.Shapes("RON"), .Shapes("BSO"), .Shapes("ON"), False)
+
+ 
+
+        End If
+
+ 
+
+    End With
+
+ 
+
+End Sub
+ 
+
+ 
+
